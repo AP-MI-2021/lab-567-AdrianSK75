@@ -12,14 +12,14 @@ def afiseazaLista(lista):
         print(getCarte(carte))
     print("\n")
 
-def adaugaCarte(lista, id, titlu, gen, pret, tip_reducere):
+def adaugaCarte(lista, id : int, titlu, gen, pret, tip_reducere):
     if verificaLista(lista, id) is not None:
         raise ValueError("Cartea exista deja in lista")
     
     puneInLista = scrieCarte(id, titlu, gen, pret, tip_reducere)
     return lista + [puneInLista]
 
-def modificaCarte(lista, id, titlu, gen, pret, tip_reducere):
+def modificaCarte(lista, id : int, titlu, gen, pret, tip_reducere):
     if verificaLista(lista, id) is None:
         raise ValueError("Cartea nu exista in lista")
     
@@ -31,7 +31,7 @@ def modificaCarte(lista, id, titlu, gen, pret, tip_reducere):
             lista.append(carte)
     return lista
 
-def stergeCarte(lista, id):
+def stergeCarte(lista, id : int):
     if verificaLista(lista, id) is None:
         raise ValueError("Cartea nu exista in lista")
     
